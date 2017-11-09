@@ -11,13 +11,13 @@
  (((partitions-list (n exact-nonnegative-integer?))
    (listof (listof exact-nonnegative-integer?)))
   ((partitions-stream (n exact-nonnegative-integer?))
-   (streamof (listof exact-nonnegative-integer?)))
+   (stream/c (listof exact-nonnegative-integer?)))
   ((in-partitions (n exact-nonnegative-integer?))
    (Sequenceof (listof exact-nonnegative-integer?)))
   ((partitions-list* (n exact-nonnegative-integer?))
    (listof (listof exact-nonnegative-integer?)))
   ((partitions-stream* (n exact-nonnegative-integer?))
-   (streamof (listof exact-nonnegative-integer?)))
+   (stream/c (listof exact-nonnegative-integer?)))
   ((in-partitions* (n exact-nonnegative-integer?))
    (Sequenceof (listof exact-nonnegative-integer?))))]{
 
