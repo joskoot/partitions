@@ -23,10 +23,10 @@
 
  Procedures @racket[partitions-list] and @racket[partitions-list*]
  return a list of all partitions of argument @racket[n].
- @(linebreak)
+
  Procedures @racket[partitions-stream] and @racket[partitions-stream*]
  return a lazy stream of all partitions of argument @racket[n].
- @(linebreak)
+
  Procedures @racket[in-partitions] and @racket[in-partitions*]
  return a lazy sequence of all partitions of argument @racket[n].
  
@@ -59,16 +59,14 @@ use a hash for speeding up by avoiding repeated identical computations.
 For procedure @racket[partitions-list] the hash is preserved between successive calls.
 This has the advantage that subsequent calls do not have to repeat computations already made during
 previous calls.
-It has the disadvantage that the hash cannot become garbage collectable as long as procedure
-@racket[partitions-list] itself is not garbage collectable.
+It has the disadvantage that the hash cannot become garbage collectable as long as procedures
+@racket[partitions-list] and @racket[clear-partition-hashes] are not garbage collectable.
 For procedure @racket[partitions-list*] the hash is not preserved between successive calls.
 This has the disadvantage that subsequent calls cannot use results obtained during earlier calls.
 It has the advantage that the hash becomes garbage collectable after return from procedure
 @racket[partitions-list*].
 
 A similar difference exists between @racket[partitions-stream] and @racket[partitions-stream*].
-The hash used by @racket[partitions-stream*] becomes garbage collectable after the end of
-the stream has been reached or the stream itself becomes garbage collectable.
 
 The same holds for the sequence produced by @racket[in-partitions*].
 It uses @racket[partitions-stream*] for the construction of the sequence.
