@@ -5,7 +5,7 @@
 @(require (for-syntax racket))
 @title{Partitions}
 @author{Jacob J. A. Koot}
-@(defmodule "partitions.rkt"  #:packages ())
+@(defmodule partitions/partitions  #:packages ())
 
 @defproc*[#:kind "procedures"
  (((partitions-list (n exact-nonnegative-integer?))
